@@ -1,3 +1,3 @@
-# sonar-docker
+# Sona setup docker-compose with Postgres database
 
-Sonar configuration setup in docker with Postgres DB
+All configuration is overriden by env variables (username, password, jdbc URL) in the each docker-compose
