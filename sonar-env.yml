@@ -12,7 +12,6 @@ services:
       service: sonarqube
     depends_on:
       - "sonar-postgres"
-    # command: ["./wait-for-postgres.sh", "sonar-postgres:5432"]
     networks:
       - sonar_network
 networks:
