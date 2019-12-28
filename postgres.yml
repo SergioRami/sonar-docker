@@ -1,0 +1,13 @@
+version: '2.4'
+services:
+    sonar-postgres:
+        container_name: sonar-postgres
+        environment:
+            - POSTGRES_USER=sonar
+            - POSTGRES_PASSWORD=sonar
+        ports:
+            - '5432:5432'
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        restart: unless-stopped
+        image: postgres

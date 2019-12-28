@@ -1,0 +1,25 @@
+version: '2.4'
+services:
+  sonar-postgres:
+    extends:
+      file: postgres.yml
+      service: sonar-postgres
+    networks:
+    - sonar_network
+  sonarqube:
+    extends:
+      file: sonarqube.yml
+      service: sonarqube
+    depends_on:
+      - "sonar-postgres"
+    # command: ["./wait-for-postgres.sh", "sonar-postgres:5432"]
+    networks:
+      - sonar_network
+networks:
+  sonar_network:
+volumes:
+  postgres_data:
+  sonarqube_conf:
+  sonarqube_extensions:
+  sonarqube_logs:
+  sonarqube_data:
